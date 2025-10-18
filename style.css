@@ -71,14 +71,23 @@ a:focus-visible, button:focus-visible, .cta-button:focus-visible {
 .cta-button:hover { transform: translateY(-1px); box-shadow: 0 6px 18px rgba(19,169,215,.35); }
 .cta-button:active { transform: translateY(0); box-shadow: none; }
 
-.hero-image { flex: 1 1 45%; text-align: right; }
 .hero-image img {
   width: 100%;
-  max-width: 450px;
-  height: auto;
+  height: 100%;
+  max-width: none;
+  object-fit: cover;
   border-radius: 12px;
   border: 2px solid var(--accent);
 }
+.hero {
+  display: flex;
+  align-items: stretch; /* beide Seiten gleich hoch */
+  justify-content: space-between;
+  gap: 32px;
+  padding: 60px 10%;
+  background: var(--black);
+}
+
 
 ```css
 /* BENEFITS */
