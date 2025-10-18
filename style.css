@@ -72,8 +72,8 @@ a:focus-visible, button:focus-visible, .cta-button:focus-visible {
 .cta-button:active { transform: translateY(0); box-shadow: none; }
 
 .hero-image img {
-  width: 200%;
-  height: 200%;
+  width: 100%;
+  height: 100%;
   max-width: none;
   object-fit: cover;
   border-radius: 12px;
@@ -87,6 +87,28 @@ a:focus-visible, button:focus-visible, .cta-button:focus-visible {
   padding: 60px 10%;
   background: var(--black);
 }
+/* HERO Bild größer machen */
+.hero {
+  align-items: stretch; /* beide Seiten gleich hoch */
+  min-height: 500px;    /* Mindesthöhe der gesamten Sektion */
+}
+
+.hero-image {
+  flex: 1 1 45%;
+  display: flex;
+  align-items: center;     /* Bild vertikal zentrieren */
+  justify-content: center; /* horizontal zentrieren */
+}
+
+.hero-image img {
+  width: auto;
+  height: 100%;
+  max-height: 600px;       /* Bildhöhe – kannst anpassen */
+  object-fit: cover;
+  border-radius: 12px;
+  border: 2px solid var(--accent);
+}
+
 
 
 ```css
