@@ -79,6 +79,20 @@ a:focus-visible, button:focus-visible, .cta-button:focus-visible {
   border-radius: 12px;
   border: 2px solid var(--accent);
 }
+.portrait {
+  width: auto;
+  height: 100%; /* nimmt die volle Höhe des Containers */
+  object-fit: cover; /* füllt den Bereich, ohne verzerrt zu werden */
+  border-radius: 20px; /* optional: weiche Ecken */
+}
+
+.hero-section {
+  display: flex;
+  align-items: stretch; /* beide Seiten gleich hoch */
+  justify-content: space-between;
+  height: auto; /* oder z. B. min-height: 90vh; */
+  gap: 40px;
+}
 
 ```css
 /* BENEFITS */
