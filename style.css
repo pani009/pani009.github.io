@@ -72,8 +72,8 @@ a:focus-visible, button:focus-visible, .cta-button:focus-visible {
 .cta-button:active { transform: translateY(0); box-shadow: none; }
 
 .hero-image img {
-  width: 100%;
-  height: 100%;
+  width: 200%;
+  height: 200%;
   max-width: none;
   object-fit: cover;
   border-radius: 12px;
