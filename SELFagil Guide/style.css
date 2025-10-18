@@ -1,0 +1,404 @@
+/* Grunddesign – nur Helvetica + 3 Farben (#000, #fff, #13a9d7) */
+:root{
+  --black:#000000;
+  --white:#FFFFFF;
+  --accent:#13a9d7;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--black);
+  color: var(--white);
+  font-family: Helvetica, "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3 { color: var(--accent); margin-top: 0; }
+
+/* Links & Fokus sichtbar */
+a { color: var(--accent); text-decoration: none; }
+a:focus-visible, button:focus-visible, .cta-button:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+}
+
+/* HERO */
+.hero {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  padding: 60px 10%;
+  background: var(--black);
+}
+
+.hero-text { flex: 1 1 45%; }
+
+.hero-text h1 {
+  font-size: clamp(2.2rem, 4vw, 3.2rem);
+  margin-bottom: 20px;
+}
+
+.hero-text p {
+  font-size: 1.25rem;
+  margin-bottom: 28px;
+  color: var(--white);
+}
+.hero-text p strong {
+  font-size: 3.2rem;   /* größerer Text */
+  color: var(--white);
+  display: block;      /* macht Zeilenumbruch sauber */
+  line-height: 1.4;
+}
+
+
+.cta-button {
+  display: inline-block;
+  background: var(--accent);
+  color: var(--black);
+  padding: 14px 28px;
+  border-radius: 6px;
+  font-weight: 700;
+  border: 2px solid var(--accent);
+  transition: transform .15s ease, box-shadow .15s ease, background .2s ease, color .2s ease;
+}
+.cta-button:hover { transform: translateY(-1px); box-shadow: 0 6px 18px rgba(19,169,215,.35); }
+.cta-button:active { transform: translateY(0); box-shadow: none; }
+
+.hero-image { flex: 1 1 45%; text-align: right; }
+.hero-image img {
+  width: 100%;
+  max-width: 450px;
+  height: auto;
+  border-radius: 12px;
+  border: 2px solid var(--accent);
+}
+
+```css
+/* BENEFITS */
+.benefits {
+  background: var(--black);
+  padding: 80px 5%;
+  text-align: center;
+}
+
+.benefits h2 {
+  font-size: clamp(2rem, 3vw, 3rem);
+  margin-bottom: 50px;
+  color: var(--accent);
+}
+
+/* Container mit flexibler Reihe */
+.benefits-row {
+  display: flex;
+  flex-wrap: wrap;          /* Damit es auf kleinen Geräten umbrechen darf */
+  justify-content: center;  /* Zentriert die Reihe */
+  gap: 40px;                /* Abstand zwischen den Elementen */
+}
+
+/* Einzelner Benefit-Block */
+.benefit {
+  flex: 0 1 180px;          /* Max. Breite 180px, flexibel */
+  text-align: center;
+}
+
+.benefit img {
+  width: 100%;
+  height: auto;
+  max-width: 150px;         /* Bild kleiner */
+  margin-bottom: 10px;
+  border-radius: 8px;
+  border: 2px solid var(--accent);
+}
+
+.benefit h3 {
+  color: var(--accent);
+  font-size: 1.2rem;
+  margin: 8px 0 5px;
+}
+
+.benefit p {
+  font-size: 0.95rem;
+  color: var(--white);
+  margin: 0;
+}
+
+/* Responsiv für kleine Bildschirme */
+@media (max-width: 600px) {
+  .benefits-row {
+    flex-direction: column;
+    align-items: center;
+  }
+  .benefit {
+    max-width: 220px;
+  }
+}
+```@media (max-width: 600px) {
+  .benefits-row {
+    flex-direction: column;
+    align-items: center;
+  }
+  .benefit {
+    max-width: 220px;
+  }
+}
+
+/* >>> HIER NEUE REGELN EINFÜGEN <<< */
+
+/* Schriftgrößenanpassung */
+.expect-section h2 {
+  font-size: clamp(2.5rem, 4vw, 3.5rem);
+}
+
+.expect-section p {
+  font-size: 1.3rem;
+}
+
+/* BENEFITS */
+.benefits {
+  background: var(--black);
+  padding: 80px 5%;
+  text-align: center; /* sorgt dafür, dass "Deine Benefits" mittig steht */
+}
+
+.benefits h2 {
+  font-size: clamp(2rem, 3vw, 3rem);
+  margin-bottom: 50px;
+  color: var(--accent);
+  text-align: center;   /* explizit mittig */
+}
+
+/* Container mit flexibler Reihe */
+.benefits-row {
+  display: flex;
+  flex-wrap: wrap;          /* darf umbrechen */
+  justify-content: center;  /* Reihe mittig */
+  gap: 40px;                /* Abstand zwischen den Elementen */
+}
+
+/* Einzelner Benefit-Block */
+.benefit {
+  flex: 0 1 180px;
+  text-align: center;
+}
+
+.benefit img {
+  width: 100%;
+  height: auto;
+  max-width: 150px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  border: 2px solid var(--accent);
+}
+
+.benefit h3 {
+  color: var(--accent);
+  font-size: 1.2rem;
+  margin: 8px 0 5px;
+}
+
+.benefit p {
+  font-size: 0.95rem;
+  color: var(--white);
+  margin: 0;
+}
+
+/* Responsiv für kleine Bildschirme */
+@media (max-width: 600px) {
+  .benefits-row {
+    flex-direction: column;
+    align-items: center;
+  }
+  .benefit {
+    max-width: 220px;
+  }
+}
+
+/* Nur der Bereich "Was dich erwartet" etwas nach rechts rücken */
+.was-dich-erwartet {
+  margin-left: 10%;      /* Abstand vom linken Rand */
+  margin-right: 10%;     /* optional, für gleichmäßigen Rand */
+  padding: 40px 0;
+  max-width: 800px;      /* verhindert zu breite Zeilen */
+}
+
+.was-dich-erwartet h2 {
+  color: var(--accent);
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.was-dich-erwartet p,
+.was-dich-erwartet li {
+  font-size: 1.25rem;    /* größerer Fließtext */
+  line-height: 1.8;
+}
+
+.was-dich-erwartet h3 {
+  font-size: 1.6rem;
+  color: var(--accent);
+  margin-top: 40px;
+  margin-bottom: 10px;
+}
+/* FOOTER */
+footer {
+  text-align: center;        /* alles mittig */
+  padding: 28px 10%;
+  background: var(--black);
+  color: var(--white);
+  border-top: 1px solid var(--accent);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+footer a {
+  color: var(--accent);
+  text-decoration: none;
+  margin: 0 6px;             /* Abstand links/rechts */
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+/* DEIN WARUM – drei blaue Karten nebeneinander */
+.why {
+  padding: 80px 8%;
+  background: var(--black);
+}
+
+.why h2 {
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  text-align: center;          /* Überschrift mittig */
+  margin-bottom: 48px;
+  color: var(--accent);
+}
+
+.why-blocks {
+  display: flex;
+  flex-wrap: wrap;             /* darf auf kleineren Screens umbrechen */
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.why-block {
+  flex: 1 1 30%;
+  min-width: 280px;
+  background: var(--accent);   /* blau wie im Beispielbild */
+  color: var(--white);
+  padding: 28px;
+  border-radius: 16px;
+  text-align: left;
+}
+
+.why-block h3 {
+  margin: 0 0 14px;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--white);
+  text-transform: uppercase;
+}
+
+.why-block ul {
+  margin: 0;
+  padding-left: 22px;          /* Bullet-Einzug */
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+/* Responsive: untereinander auf schmalen Screens */
+@media (max-width: 900px) {
+  .why-blocks {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+/* WAS DICH ERWARTET – Layout */
+.expect-section{
+  background: var(--accent);          /* #13a9d7 */
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 48px;
+  padding: 80px 8%;
+}
+
+.expect-left{
+  flex: 1 1 55%;
+  max-width: 800px;
+}
+
+.expect-right{
+  flex: 1 1 40%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.expect-right img{
+  width: 100%;
+  max-width: 520px;
+  height: auto;
+}
+
+/* große Überschrift links in Schwarz */
+.expect-left h2{
+  margin: 0 0 28px;
+  color: var(--black);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  font-size: clamp(2.4rem, 7.5vw, 6rem);
+  line-height: 1.05;
+}
+
+/* Liste */
+.expect-list{
+  margin: 0 0 24px 0;
+  padding-left: 1.2em;
+  font-size: clamp(1.1rem, 2.1vw, 1.5rem);
+  line-height: 1.6;
+}
+.expect-list li{ margin: .3em 0; }
+.expect-list li::marker{ color: var(--white); }
+
+/* Highlight-Absatz */
+.expect-highlight{
+  margin: 22px 0 28px;
+  font-size: clamp(1.05rem, 2vw, 1.4rem);
+  font-weight: 700;
+}
+
+/* Schwarzer Button */
+.expect-cta{
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--black);
+  color: var(--white);
+  padding: 14px 22px;
+  border-radius: 9999px;
+  font-weight: 700;
+  border: 2px solid var(--black);
+  text-decoration: none;
+  transition: transform .15s ease, background .2s ease, color .2s ease;
+}
+.expect-cta:hover{
+  transform: translateY(-1px);
+  background: var(--white);
+  color: var(--black);
+  border-color: var(--white);
+}
+
+/* Responsive */
+@media (max-width: 1000px){
+  .expect-section{ flex-direction: column; text-align: left; }
+  .expect-right{ justify-content: center; }
+}
+
