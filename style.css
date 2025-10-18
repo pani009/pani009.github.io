@@ -79,15 +79,6 @@ a:focus-visible, button:focus-visible, .cta-button:focus-visible {
   border-radius: 12px;
   border: 2px solid var(--accent);
 }
-.hero {
-  display: flex;
-  align-items: stretch; /* beide Seiten gleich hoch */
-  justify-content: space-between;
-  gap: 32px;
-  padding: 60px 10%;
-  background: var(--black);
-}
-
 
 ```css
 /* BENEFITS */
