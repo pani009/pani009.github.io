@@ -97,9 +97,11 @@ a:focus-visible, button:focus-visible, .cta-button:focus-visible {
 /* Container mit flexibler Reihe */
 .benefits-row {
   display: flex;
-  flex-wrap: wrap;          /* Damit es auf kleinen Geräten umbrechen darf */
-  justify-content: center;  /* Zentriert die Reihe */
-  gap: 40px;                /* Abstand zwischen den Elementen */
+  flex-wrap: nowrap;           /* keine Zeilenumbrüche – alle in einer Reihe */
+  justify-content: space-between; /* verteilt sie gleichmäßig über die Breite */
+  align-items: flex-start;
+  gap: 20px;                   /* kleinerer Abstand */
+  width: 100%;
 }
 
 /* Einzelner Benefit-Block */
